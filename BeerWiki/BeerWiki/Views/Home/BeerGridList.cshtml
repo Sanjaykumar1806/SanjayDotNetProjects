@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "BeerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Beer List</title>
+</head>
+<body>
+    <h2>Beer List</h2>
+    <div>
+        <Div style="float:left;height: 60px;">
+            @using (Ajax.BeginForm("SearchBeerAjaxCall", "Home", null, new AjaxOptions
+            { HttpMethod = "POST", OnBegin = "return StartValidation();", OnSuccess = "LoadBeerData", OnFailure = "OnFailure" }, null))
+            {
+                <b>Search By:</b> @Html.RadioButton("searchBy", "Name", true) <text>Name</text>
+                @Html.RadioButton("searchBy", "ID") <text>ID</text>
+
+                <br />
+                @Html.TextBox("searchText") <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+            }
+        </Div>
+        <div style="float:left;margin-top: 21px;margin-left: 10px;">
+            <button id="btnReset" type="submit" class="btn btn-primary">Reset List</button>
+        </div>
+    </div>
+    <div id="divtblBeerFilter">
+        <div id="divFilterHeader">Beer List Filter</div>
+        <table id="m_tblBeerListFilter">
+            <tr>
+                <td class="key">
+                    ID :
+                </td>
+                <td class="value">
+                    <input type="text" class="input" maxlength="150" id="m_txtBeerId" />
+                </td>
+            </tr>
+            <tr>
+                <td class="key">
+                    StyleId:
+                </td>
+                <td class="value">
+                    <input type="number" class="input" maxlength="150" id="m_txtBeerStyleID" />
+                </td>
+            </tr>
+            <tr>
+                <td class="key">
+                    Status:
+                </td>
+                <td>
+                    <select id="m_ddlBeerStatus" class="ddl_value">
+                        <option value="choose" selected>Select One</option>
+                        <option value="verified">Verified</option>
+                        <option value="update_pending">Update Pending</option>
+                        <option value="delete_pending">Delete Pending</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="key">
+                    IsOrganic:
+                </td>
+                <td>
+                    <select id="m_ddlBeerOrganic" class="ddl_value">
+                        <option value="choose" selected>Select One</option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table id="m_tblfilterButton" style="margin-top: 25px;margin-left: 34px;">
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary" onclick="saveFilter(); return false">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="deleteFilter(); return false">Reset</button>
+                    <button type="button" class="btn btn-primary" onclick="hideFilter(); return false">Close</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="lblErrorText" style="color:red;"></label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="margin-top: 80px;">
+        @{
+            Html.RenderPartial("BeerListPartialView");
+        }
+    </div>
+</body>
+</html>
+

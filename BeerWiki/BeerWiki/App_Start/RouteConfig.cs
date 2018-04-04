@@ -18,6 +18,18 @@ namespace BeerWiki
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "BeerDetails",
+                url: "{controller}/{action}/{Id}",
+                defaults: new { controller = "Home", action = "BeerDetails", beerId = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "BeerGridList",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "BeerGridList", beerId = UrlParameter.Optional }
+            );
         }
     }
 }

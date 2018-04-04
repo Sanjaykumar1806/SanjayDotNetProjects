@@ -761,6 +761,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  height:100px;
 }
 
 .container:before,
@@ -2090,9 +2091,9 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+    color: #ffffff;
+    background-color: #78abea;
+    border-color: #78abea;
 }
 
 .btn-primary:hover,
@@ -4079,6 +4080,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    margin-right :20px;
   }
 }
 
@@ -4501,8 +4503,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+    background-color: #ffc414;
+    border-color: #ffc414;
 }
 
 .navbar-inverse .navbar-brand {

@@ -1,0 +1,153 @@
+﻿@model BeerWiki.Models.BeerDataModel
+
+@{
+    ViewBag.Title = "BeerDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BeerDetails</h2>
+
+<div>
+    <h4>BeerDataModel</h4>
+    <hr />
+    <div style="height:450px;">
+        <div style="float:left; width:78%;">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NameDisplay)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NameDisplay)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Abv)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Abv)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IBU)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IBU)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GlasswareId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GlasswareId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SrmId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SrmId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AvailableId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AvailableId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StyleId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StyleId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsOrganic)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsOrganic)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StatusDisplay)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StatusDisplay)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreateDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UpdateDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UpdateDate)
+                </dd>
+
+                <dt>
+                    Glass Name:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Glass.Name)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="display-field" style="float:left;width:20%;margin-top: 41px;margin-left: 10px;">
+            @if (Model.Glass != null)
+            {
+                <img src="@Model.Labels.Large" title="BeerLogo" height="300" width="300"/>
+            }
+            else
+            {
+                <img src="~/Content/Images/default.png" title="BeerLogo" height="250" width="250"/>
+            }
+
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

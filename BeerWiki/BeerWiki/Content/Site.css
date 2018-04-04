@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top:60px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,67 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#divtblBeerFilter {
+    z-index: 1000;
+    position: absolute;
+    height: 270px;
+    width: 300px;
+    border-style: solid;
+    margin: 150px;
+    align-content: center;
+    background-color: #bcbcf9;
+    color: white;
+    padding: 24px;
+    display: none;
+}
+
+.key {
+    font-weight: bold;
+    text-align: right;
+    border: none;
+}
+
+.value {
+    box-sizing: content-box;
+    border-radius: 0;
+    border: 0 solid #aaaeb3;
+    height: 10px !important;
+    margin: 3px;
+    min-width: 50px;
+    padding: 1px;
+    text-align: left !important;
+}
+
+.ddl_value {
+    width: 168px;
+    height: 30px;
+    background-position: 50% 50%;
+    background-color: #e6e3e3;
+    border-color: #ababf1;
+    font-size: medium;
+    font-weight: bold;
+}
+
+option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+.input {
+    background-color: #e6e3e3 !important;
+    border-color: #ababf1 !important;
+}
+
+#divFilterHeader {
+    position: absolute;
+    height: 30px;
+    width: 296px;
+    margin-left: -25px;
+    align-content: center;
+    background-color: #31318c;
+    margin-top: -54px;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
 }
